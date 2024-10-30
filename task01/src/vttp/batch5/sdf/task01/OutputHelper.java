@@ -45,11 +45,11 @@ public class OutputHelper {
 
     public static void printOutput(BikeEntry rowData, int index) {
 		int cyclistCount = rowData.getCasual() + rowData.getRegistered();
-		System.out.println("The " + POSITION[index] + " recorded number of cyclists was in "
-		+ Utilities.toSeason(rowData.getSeason()) + ", on a " + Utilities.toWeekday(rowData.getWeekday())
-		+ " in the month of " + Utilities.toMonth(rowData.getMonth()) + ". There were a total of "
-		+ cyclistCount + " cyclists. The weather was " + WEATHER[rowData.getWeather()-1] + ". "
-		+ Utilities.toWeekday(rowData.getWeekday()) + " was " + isHoliday(rowData.isHoliday()) + ".");
+		System.out.println("The " + POSITION[index] + " (position) recorded number of cyclists was in "
+		+ Utilities.toSeason(rowData.getSeason()) + " (season), on a " + Utilities.toWeekday(rowData.getWeekday())
+		+ " (day) in the month of " + Utilities.toMonth(rowData.getMonth()) + " (month). There were a total of "
+		+ cyclistCount + " (total) cyclists. The weather was " + WEATHER[rowData.getWeather()-1] + " (weather). "
+		+ Utilities.toWeekday(rowData.getWeekday()) + " (day) was " + isHoliday(rowData.isHoliday()) + ".");
 		System.out.println();
 	}
 }
