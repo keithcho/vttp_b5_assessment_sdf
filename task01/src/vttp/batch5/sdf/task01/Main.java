@@ -16,11 +16,11 @@ public class Main {
 	public static Map<Integer, BikeEntry> readCSV(Reader reader) throws IOException {
 		Map<Integer, BikeEntry> dataMap = new TreeMap<>();
 		BufferedReader br = new BufferedReader(reader);
-		String line;
-
+		
 		// Allocate first line to headers
         String[] cellHeader = br.readLine().split(",");
-
+		
+		String line;
 		// Read .csv file using BufferedReader
 		while ((line = br.readLine()) != null) {
             String[] cellRow = line.split(",");
@@ -33,8 +33,11 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		String csvPath = "day.csv";
-		Reader reader = new FileReader(csvPath);
 
+		// Option to specify path for .csv file
+		if (args.length == 1) { csvPath = args[0]; }
+
+		Reader reader = new FileReader(csvPath);
 		Map<Integer, BikeEntry> dataMap = readCSV(reader);
 
 		// Sort data into descending order
